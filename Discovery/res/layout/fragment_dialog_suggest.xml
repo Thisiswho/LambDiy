@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+            android:background="#777777"
+            android:clickable="true">
+    
+    <TextView android:layout_width="match_parent" android:layout_height="200dp"
+            android:text="@string/suggest_explain" android:gravity="center"
+            android:textSize="16sp"/>
+    <EditText android:layout_width="match_parent" android:layout_height="0dp"
+              android:layout_weight="1"
+                android:hint="在此可输入您的建议" android:id="@+id/et_suggest" android:gravity="top"/>
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="提交我的建议" android:id="@+id/btn_submitSuggest"/>
+
+</LinearLayout>

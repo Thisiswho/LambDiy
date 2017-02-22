@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>远离尘世的理想乡——MagicSite</title>
+
+
+    <script src="script/jquery-3.0.0.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/2.1.2/av-min.js"></script>
+    <script src="script/app.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="effort" >
+    <img src="images/logo.png" class="center-block" id="logo">
+        <ul class="nav nav-tabs " role="tablist">
+            <li role="presentation" class="active col-xs-3 text-center"><a role="tab" data-toggle="tab" href="#main">Home</a></li>
+            <li role="presentation"  class="col-xs-3 text-center"><a role="tab" data-toggle="tab" href="#keyboard">键盘设计</a></li>
+            <li role="presentation" class="col-xs-3 text-center"><a role="tab" data-toggle="tab" href="#lambDiy">小羊DIY</a></li>
+            <li role="presentation" class="col-xs-2 text-center"><a role="tab" data-toggle="tab" href="#author">Author</a></li>
+        </ul>
+        <div class="tab-content" style="margin: 20px">
+
+            <div role="tabpanel" class="tab-pane fade in active" id="main">
+                主页面
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="keyboard">
+                键盘页面
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="lambDiy">
+                <Button onclick="getNews();">获取新闻列表</Button>
+
+                <div class="list-group" id="newsList">
+                    <button type="button" class="list-group-item" onclick="selectNews(this)">列表条目一</button>
+                </div>
+
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="author">
+                作者
+            </div>
+
+        </div>
+        <footer>
+            <div class="text-center" style="margin: 0px auto"><a href="#">返回顶部</a>
+            <p>Posted by: Prozac</p>
+            <p>Contact information: <a href="mailto:4542879@qq.com">4542879@qq.com</a>.</p>
+            </div>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

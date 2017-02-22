@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>submit.jsp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(169,183,198); }
+.s3 { color: rgb(204,120,50); font-weight: bold; }
+.s4 { color: rgb(169,183,198); }
+.s5 { color: rgb(106,135,89); }
+.s6 { color: rgb(232,191,106); }
+.s7 { color: rgb(186,186,186); }
+.s8 { color: rgb(165,194,97); }
+.s9 { color: rgb(204,120,50); font-weight: bold; }
+.s10 { color: rgb(106,135,89); }
+.s11 { color: rgb(204,120,50); }
+.s12 { color: rgb(104,151,187); }
+.s13 { color: rgb(128,128,128); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+submit.jsp</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">&lt;%-- 
+  Created by IntelliJ IDEA. 
+  User: Administrator 
+  Date: 2016/11/6 
+  Time: 22:41 
+  To change this template use File | Settings | File Templates. 
+--%&gt;</span><span class="s1"> 
+</span><span class="s2">&lt;%@ </span><span class="s3">page </span><span class="s4">contentType</span><span class="s2">=&quot;</span><span class="s5">text/html;charset=UTF-8</span><span class="s2">&quot; </span><span class="s4">language</span><span class="s2">=&quot;</span><span class="s5">java</span><span class="s2">&quot; %&gt;</span><span class="s1"> 
+</span><span class="s6">&lt;html </span><span class="s7">lang=</span><span class="s8">&quot;en&quot;</span><span class="s6">&gt;</span><span class="s1"> 
+</span><span class="s6">&lt;head&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;meta </span><span class="s7">charset=</span><span class="s8">&quot;UTF-8&quot;</span><span class="s6">&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;title&gt;</span><span class="s1">提交结果</span><span class="s6">&lt;/title&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;script </span><span class="s7">src=</span><span class="s8">&quot;script/jquery-3.0.0.min.js&quot;</span><span class="s6">&gt;&lt;/script&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;script </span><span class="s7">src=</span><span class="s8">&quot;https://cdn1.lncld.net/static/js/av-min-1.2.1.js&quot;</span><span class="s6">&gt;&lt;/script&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;script&gt;</span><span class="s1"> 
+ 
+ 
+ 
+ 
+        window.onload = </span><span class="s9">function</span><span class="s1">(){ 
+ 
+            $(</span><span class="s10">&quot;#success&quot;</span><span class="s1">).hide()</span><span class="s11">;</span><span class="s1"> 
+            $(</span><span class="s10">&quot;#fail&quot;</span><span class="s1">).hide()</span><span class="s11">;</span><span class="s1"> 
+ 
+            </span><span class="s9">var </span><span class="s1">APP_ID = </span><span class="s10">'tVEnu5PLpqDmIP1rYBkI7q9d-gzGzoHsz'</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">APP_KEY = </span><span class="s10">'JDHHXv8OogrO1dAwBx5gypr2'</span><span class="s11">;</span><span class="s1"> 
+ 
+            AV.init({ 
+                appId: APP_ID</span><span class="s11">,</span><span class="s1"> 
+                appKey: APP_KEY 
+            })</span><span class="s11">;</span><span class="s1"> 
+ 
+ 
+ 
+            requestData()</span><span class="s11">;</span><span class="s1"> 
+        } 
+ 
+        </span><span class="s9">function </span><span class="s1">request(paras) 
+        { 
+            </span><span class="s9">var </span><span class="s1">url = location.href</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">paraString = url.substring(url.indexOf(</span><span class="s10">&quot;?&quot;</span><span class="s1">)+</span><span class="s12">1</span><span class="s11">,</span><span class="s1">url.length).split(</span><span class="s10">&quot;&amp;&quot;</span><span class="s1">)</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">paraObj = {} 
+            </span><span class="s9">for </span><span class="s1">(i=</span><span class="s12">0</span><span class="s11">; </span><span class="s1">j=paraString[i]</span><span class="s11">; </span><span class="s1">i++){ 
+                paraObj[j.substring(</span><span class="s12">0</span><span class="s11">,</span><span class="s1">j.indexOf(</span><span class="s10">&quot;=&quot;</span><span class="s1">)).toLowerCase()] = j.substring(j.indexOf(</span><span class="s10">&quot;=&quot;</span><span class="s1">)+</span><span class="s12">1</span><span class="s11">,</span><span class="s1">j.length)</span><span class="s11">;</span><span class="s1"> 
+            } 
+            </span><span class="s9">var </span><span class="s1">returnValue = paraObj[paras.toLowerCase()]</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">if</span><span class="s1">(</span><span class="s9">typeof</span><span class="s1">(returnValue)==</span><span class="s10">&quot;undefined&quot;</span><span class="s1">){ 
+                </span><span class="s9">return </span><span class="s10">&quot;&quot;</span><span class="s11">;</span><span class="s1"> 
+            }</span><span class="s9">else</span><span class="s1">{ 
+                </span><span class="s9">return </span><span class="s1">decodeURI(returnValue)</span><span class="s11">;</span><span class="s1"> 
+            } 
+        } 
+ 
+ 
+        </span><span class="s9">function </span><span class="s1">requestData(){ 
+            </span><span class="s9">var </span><span class="s1">name = decodeURI(request(</span><span class="s10">&quot;name&quot;</span><span class="s1">))</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">areaIndex = request(</span><span class="s10">&quot;area&quot;</span><span class="s1">)</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">area</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">switch </span><span class="s1">(areaIndex){ 
+                </span><span class="s9">case </span><span class="s10">&quot;0&quot;</span><span class="s1">: 
+                    area = </span><span class="s10">&quot;未选中&quot;</span><span class="s11">;</span><span class="s1"> 
+                    </span><span class="s9">break</span><span class="s11">;</span><span class="s1"> 
+                </span><span class="s9">case </span><span class="s10">&quot;1&quot;</span><span class="s1">: 
+                    area = </span><span class="s10">&quot;紫藤公寓&quot;</span><span class="s11">;</span><span class="s1"> 
+                    </span><span class="s9">break</span><span class="s11">;</span><span class="s1"> 
+                </span><span class="s9">case </span><span class="s10">&quot;2&quot;</span><span class="s1">: 
+                    area = </span><span class="s10">&quot;学苑公寓&quot;</span><span class="s11">;</span><span class="s1"> 
+                    </span><span class="s9">break</span><span class="s11">;</span><span class="s1"> 
+                </span><span class="s9">case </span><span class="s10">&quot;3&quot;</span><span class="s1">: 
+                    area = </span><span class="s10">&quot;群星公寓&quot;</span><span class="s11">;</span><span class="s1"> 
+                    </span><span class="s9">break</span><span class="s11">;</span><span class="s1"> 
+                </span><span class="s9">case </span><span class="s10">&quot;4&quot;</span><span class="s1">: 
+                    area = </span><span class="s10">&quot;校外&quot;</span><span class="s11">;</span><span class="s1"> 
+                    </span><span class="s9">break</span><span class="s11">;</span><span class="s1"> 
+            } 
+            </span><span class="s9">var </span><span class="s1">telephone = request(</span><span class="s10">&quot;telephone&quot;</span><span class="s1">)</span><span class="s11">;</span><span class="s1"> 
+</span><span class="s13">//            var wayIndex = request(&quot;way&quot;);</span><span class="s1"> 
+</span><span class="s13">//            var way;</span><span class="s1"> 
+</span><span class="s13">//            switch(wayIndex){</span><span class="s1"> 
+</span><span class="s13">//                case &quot;1&quot;:</span><span class="s1"> 
+</span><span class="s13">//                    way = &quot;面交&quot;;</span><span class="s1"> 
+</span><span class="s13">//                    break;</span><span class="s1"> 
+</span><span class="s13">//                case &quot;2&quot;:</span><span class="s1"> 
+</span><span class="s13">//                    way = &quot;快递&quot;;</span><span class="s1"> 
+</span><span class="s13">//                    break;</span><span class="s1"> 
+</span><span class="s13">//            }</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">num = request(</span><span class="s10">&quot;num&quot;</span><span class="s1">)</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">price = parseInt(num) * </span><span class="s12">12</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">qq = request(</span><span class="s10">&quot;qq&quot;</span><span class="s1">)</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">addon = request(</span><span class="s10">&quot;addon&quot;</span><span class="s1">)</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">buyRecord = AV.Object.extend(</span><span class="s10">'BuyRecord'</span><span class="s1">)</span><span class="s11">;</span><span class="s1"> 
+            </span><span class="s9">var </span><span class="s1">recordObject = </span><span class="s9">new </span><span class="s1">buyRecord()</span><span class="s11">;</span><span class="s1"> 
+ 
+            recordObject.save({ 
+                name:name</span><span class="s11">,</span><span class="s1"> 
+                area:area</span><span class="s11">,</span><span class="s1"> 
+                telephone:telephone</span><span class="s11">,</span><span class="s1"> 
+                num:num</span><span class="s11">,</span><span class="s1"> 
+                price:price</span><span class="s11">,</span><span class="s1"> 
+                qq:qq</span><span class="s11">,</span><span class="s1"> 
+                addon</span><span class="s11">,</span><span class="s1">addon 
+            }).then(</span><span class="s9">function</span><span class="s1">(){ 
+                $(</span><span class="s10">&quot;#success&quot;</span><span class="s1">).show()</span><span class="s11">;</span><span class="s1"> 
+            }).catch(</span><span class="s9">function</span><span class="s1">(err){ 
+                $(</span><span class="s10">&quot;#fail&quot;</span><span class="s1">).innerText = err</span><span class="s11">;</span><span class="s1"> 
+                alert(err)</span><span class="s11">;</span><span class="s1"> 
+                alert(err.toString())</span><span class="s11">;</span><span class="s1"> 
+            })</span><span class="s11">;</span><span class="s1"> 
+        } 
+ 
+    </span><span class="s6">&lt;/script&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;style&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;/style&gt;</span><span class="s1"> 
+</span><span class="s6">&lt;/head&gt;</span><span class="s1"> 
+</span><span class="s6">&lt;body&gt;</span><span class="s1"> 
+</span><span class="s6">&lt;div </span><span class="s7">class=</span><span class="s8">&quot;container&quot;</span><span class="s6">&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;div </span><span class="s7">id=</span><span class="s8">&quot;success&quot;</span><span class="s6">&gt;</span><span class="s1">购买成功，请您耐心等待，我会稍后与您网络或短信联系。</span><span class="s6">&lt;/div&gt;</span><span class="s1"> 
+    </span><span class="s6">&lt;div </span><span class="s7">id=</span><span class="s8">&quot;fail&quot;</span><span class="s6">&gt;</span><span class="s1">你看到这一行就说明购买失败了。</span><span class="s6">&lt;/div&gt;</span><span class="s1"> 
+</span><span class="s6">&lt;/div&gt;</span><span class="s1"> 
+</span><span class="s6">&lt;/body&gt;</span><span class="s1"> 
+</span><span class="s6">&lt;/html&gt;</span></pre>
+</body>
+</html>

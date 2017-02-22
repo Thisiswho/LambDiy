@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<LinearLayout android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <android.support.v4.view.ViewPager android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+                                       android:id="@+id/main_viewPager" />
+    
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+                android:orientation="horizontal">
+
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:orientation="vertical"
+                      android:id="@+id/nav_news">
+            <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/people"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"
+                      android:text="资讯" android:id="@+id/nav_news_text"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:orientation="vertical"
+                      android:id="@+id/nav_diy">
+            <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/people"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"
+                      android:text="改装" android:id="@+id/nav_diy_text"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent" android:orientation="vertical"
+                      android:id="@+id/nav_me">
+            <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/people"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"
+                      android:text="我" android:id="@+id/nav_me_text"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+             android:id="@+id/main_container">
+    </FrameLayout>
+</FrameLayout>

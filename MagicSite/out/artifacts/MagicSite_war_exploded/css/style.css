@@ -1,0 +1,18 @@
+body{
+    background-image: url("../images/bg.jpg");
+    position: relative;
+    margin: 0px;
+    padding: 80px;
+}
+
+#effort{
+    background-color: rgba(200,200,200,0.5);
+}
+
+#logo{
+    padding: 30px;
+}
+
+.container{
+    height: 1000px;
+}

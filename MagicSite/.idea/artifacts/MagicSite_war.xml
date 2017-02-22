@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="MagicSite:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/MagicSite_war</output-path>
+    <root id="archive" name="MagicSite_war.war">
+      <element id="artifact" artifact-name="MagicSite:war exploded" />
+    </root>
+  </artifact>
+</component>
