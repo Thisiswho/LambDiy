@@ -98,7 +98,7 @@ public class NewsFragment extends Fragment{
         myNewsData = new ArrayList<>();
         AVQuery newsQuery = new AVQuery("News");
         if(mCategory != 0)
-            newsQuery.whereEqualTo("Category",mCategory);
+            newsQuery.whereEqualTo("category",mCategory);
         newsQuery.findInBackground(new FindCallback() {
             @Override
             public void done(List list, AVException e) {
